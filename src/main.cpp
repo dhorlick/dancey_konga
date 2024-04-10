@@ -281,11 +281,11 @@ Two DK Bongo Layout for Dancey Konga (unbent button mappings depicted)
 
     if (gamecube_controller_1_responded || gamecube_controller_2_responded)
     {
-	    uint32_t input_state_bits = controllers_pair_state_to_uint32_t(input_state);
-        if (input_state_watermark != input_state_bits)
-        {
-            rp2040.fifo.push_nb(input_state_bits);
-            input_state_watermark = input_state_bits;
-        }
-    }
+		uint32_t input_state_bits = controllers_pair_state_to_uint32_t(input_state);
+		if (input_state_watermark != input_state_bits)
+		{
+			rp2040.fifo.push_nb(input_state_bits);
+			input_state_watermark = input_state_bits;
+		}
+	}
 }
